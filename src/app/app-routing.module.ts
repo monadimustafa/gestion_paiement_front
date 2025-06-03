@@ -7,8 +7,6 @@ import { StudentsComponent } from './core/components/students/students.component
 import { PaymentsComponent } from './core/components/payments/payments.component';
 import { DashboardComponent } from './core/components/dashboard/dashboard.component';
 import { AdminTemplateComponent } from './core/components/admin-template/admin-template.component';
-import { authentificationGuard } from './core/guards/authentification/authentification.guard';
-import { authorizationGuard } from './core/guards/authorization/authorization.guard';
 import { StudentPaymentsComponent } from './core/components/student-payments/student-payments.component';
 import { NewPaymentComponent } from './core/components/new-payment/new-payment.component';
 import { PaymentDetailsComponent } from './core/components/payment-details/payment-details.component';
