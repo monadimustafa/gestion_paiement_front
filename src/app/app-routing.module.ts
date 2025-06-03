@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HomeComponent } from './core/components/home/home.component';
 import { ProfileComponent } from './core/components/profile/profile.component';
 import { LoginComponent } from './core/components/login/login.component';
@@ -11,7 +10,6 @@ import { AdminTemplateComponent } from './core/components/admin-template/admin-t
 import { StudentPaymentsComponent } from './core/components/student-payments/student-payments.component';
 import { NewPaymentComponent } from './core/components/new-payment/new-payment.component';
 import { PaymentDetailsComponent } from './core/components/payment-details/payment-details.component';
-
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
