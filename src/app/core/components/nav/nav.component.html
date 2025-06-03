@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sideDrawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span style="flex: auto"></span>
+
+  <button mat-button routerLink="home">Home</button>
+  <button mat-button routerLink="profile">Profile</button>
+  <button mat-button [matMenuTriggerFor]="importMenu" *ngIf="isAuthorized()">
+    <span>Menu</span>
+    <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
+  </button>
+
+  <mat-menu #importMenu>
+    <button mat-menu-item routerLink="students">Load Students</button>
+    <button mat-menu-item routerLink="payments">Load Payments</button>
+  </mat-menu>
+
+  <span *ngIf="authService.isAuthenticated; else login">
+    <button mat-button>{{ authService.authenticatedUser.username }}</button>
+    <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+  </span>
+
+  <ng-template #login>
+    <button mat-raised-button color="accent" (click)="goToLogin()">
+      Login
+    </button>
+  </ng-template>
+</mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer opened="true" mode="side" position="start" #sideDrawer>
+    <mat-list>
+      <mat-list-item>
+        <button mat-button routerLink="dashboard">
+          <mat-icon>dashboard</mat-icon>
+          Dashboard
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="students">
+          <mat-icon>person_pin</mat-icon>
+          Students
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="payments">
+          <mat-icon>payment</mat-icon>
+          Payments
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div style="min-height: 100vh; padding: 20px">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

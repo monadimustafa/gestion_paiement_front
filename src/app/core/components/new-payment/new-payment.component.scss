@@ -1,0 +1,23 @@
+mat-form-field {
+  width: 100%;
+  display: block;
+  &:first-child {
+    margin-top: 20px;
+  }
+}
+.container {
+  display: flex;
+  grid-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.payment-form {
+  min-width: 450px;
+}
+
+.pdf-viewer {
+  width: 450px;
+  height: 450px;
+  max-height: 450px;
+  flex: 2;
+}
